@@ -5,12 +5,13 @@
   box-sizing: border-box;
 }
 .arrow{
-  height: 15rem;
-  width: .2rem;
   background-color: black;
+  height: 10rem;
+  width: .2rem;
+ 
 
   z-index: 5;
-  transform: rotateX(60deg);
+  transform: rotateX(0deg);
 }
 .bow{
   position: absolute;
@@ -121,9 +122,7 @@
   font-weight: 700;
   font-size: 3rem;
 }
-@keyframes grow {
-  
-}
+
 h1{
   font-weight: 700;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -176,7 +175,7 @@ h1{
   width: 100%;
   bottom: -6%;
   height:20rem;
-  background-color: transparent;
+  background-color: aqua;
   z-index: 2;
 }
 .ba2{
@@ -186,9 +185,8 @@ h1{
   width: 101%;
   bottom: -10%;
   height: 20rem;
-  
-  
-  z-index: 6;
+
+  z-index: 5;
 }
  
 .ba3{
@@ -270,7 +268,9 @@ h1{
 
   }
 
-
+  .ba2{
+    bottom: -6%;
+  }
 }
 @media (max-width:700px) {
   
@@ -286,6 +286,9 @@ h1{
     }
    
     
+  }
+  .ba2{
+    bottom: -6%;
   }
   .target{
     width: 25%;
@@ -314,6 +317,7 @@ h1{
   
     }
     .arrow{
+      background-color: red;
       width: .1rem;
       height: 8rem;
     }
@@ -343,12 +347,13 @@ h1{
 }
 
 .arrow-move{
+  background-color: red;
   position: absolute;
   height:5rem;
   width: .1rem;
   top: 70%;
   display: none;
-  
+  animation-name: ar;
   animation-duration: .04s;
   animation-iteration-count:1;
   background-color: black;
@@ -366,7 +371,7 @@ h1{
   
   .pts-c{
     position: absolute;
-    top: 30%;
+    top: 25%;
     width: 100%;
     height: 10rem;
     display: flex;
