@@ -5,78 +5,55 @@
   box-sizing: border-box;
 }
 .arrow{
-  position: absolute;
-  top: 75%;
-  left: 45%;
+  height: 15rem;
+  width: .2rem;
+  background-color: black;
+
   z-index: 5;
   transform: rotateX(60deg);
 }
 .bow{
   position: absolute;
-  top: 80%;
-  left: 43%;
+  display: block;
   transform: rotateX(50d
   eg);
   filter: drop-shadow( 0rem 7rem .4rem black);
 }
-.arrow-mov{
-  z-index: 4;
-  position: absolute;
-  top: 60%;
-  left: 45%;
-  position: absolute;
-  animation-timing-function: linear;
-  animation: arr;
-  animation-duration: .1s;
-  animation-iteration-count:1;
-  animation-fill-mode: forwards;
-}
- 
-@keyframes arr {
-  from{
-    top: 81%;
-  }
-  to{
-    top: 5%;
-  }
-}
+
 
 
 .target{
-  transform: rotateX(50deg);
   position: absolute;
-  left: 0%;
-  z-index: 2;
-  top: 10.5%;
-  animation-timing-function: linear;
+  display: block;
+  transform: rotateX(50deg);
   animation: mover;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
+  z-index: 2;
+  width: 13%;
   filter: drop-shadow( 0rem -5rem 1rem rgba(0, 0, 0, 0.649));
 }
 @keyframes mover {
   0%{
-    left: 20%;
+   left: 10%;
   }
   50%{
-    left: 70%;
+    left: 80%;
   }
   100%{
-    left:20%;
+  left:10%;
   }
   
 }
 .color{
   transform: rotateX(50deg);
   z-index: 2;
-  width: 11.3rem;
-  height: 12em;
+  width: 13%;
+  height: 13rem;
   border-radius: 12rem;
   border: 1rem solid white;
   position: absolute;
-  top: 10%;
-  
-
+  top: 5%;
   animation-timing-function: linear;
   animation: mover;
   animation-duration: 6s;
@@ -96,18 +73,19 @@
   background-image: url(46190.jpg);
   background-position: bottom;
   background-size: cover;
-  height: 100vh;
-  width: 100%;
+  height: 108vh;
+  width: 101%;
   z-index: -2;
+  position: relative;
  
 }
 .pts{
   z-index: 5;
-  position: fixed;
-  top: 35%;
+  position: absolute;
+  margin-right: 2%;
   width: 20rem;
   height: 15rem;
-  left: 80.3%;
+
   border: .3rem solid black;  
   display: flex;
   flex-direction: column;
@@ -116,8 +94,8 @@
   align-items: center;
   color: rgba(30, 30, 30, 0.713);
   border-radius: 1rem;
- zoom: 100%;
- transition: .4s;
+  zoom: 100%;
+  transition: .4s;
 
 }
 
@@ -152,27 +130,27 @@ h1{
 }
 
 .holder{
-  height: 10rem;
-  width: 1rem;
+  height: 50%;
+  width: 1%;
   background-color: brown;
   position: absolute;
   top: 0%;
-  left: 10%;
+  left: 15%;
   z-index: 0;
   animation-timing-function: linear;
   animation: mover1;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 @keyframes mover1 {
   0%{
-    left: 24%;
+    left: 16%;
   }
   50%{
-    left: 74%;
+    left: 86%;
   }
   100%{
-    left: 24%;
+    left: 16%;
   }
  
   
@@ -188,4 +166,233 @@ h1{
   border: none;
   border-radius: 1rem;
   display: none;
+}
+
+
+.ba{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: -6%;
+  height:20rem;
+  background-color: transparent;
+  z-index: 2;
+}
+.ba2{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 101%;
+  bottom: -10%;
+  height: 20rem;
+  
+  
+  z-index: 6;
+}
+ 
+.ba3{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+
+  width: 100%;
+  bottom: 0%;
+  height: 110vh;
+  
+  
+  z-index: 5;
+}
+.color{
+  display: none;
+}
+.tc{
+
+  display: flex;
+  align-items:start ;
+  justify-content: end;
+  position: absolute;
+  top: 0%;
+  width: 101%;
+  height: 30%;
+
+  
+
+}
+.pts-c{
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+ z-index: 6;
+}
+
+@media (max-width:1600px) {
+  .color{
+    display: none;
+  }
+  .arrow-move{
+    position: absolute;
+    height:10rem;
+    width: .1rem;
+
+    
+    animation-duration: .1s;
+    animation-iteration-count:1;
+    background-color: black;
+  
+  }
+  .tc{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: fixed;
+    top: 0%;
+    width: 101%;
+    height: 15%;
+  
+  }
+
+  .bow{
+    width: 29%;
+  }
+
+  .pts{
+  z-index: 6;
+
+  width: 20rem;
+  height: 15rem;
+ 
+  border: .3rem solid black;  
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(204, 204, 204);
+  justify-content: space-around;
+  align-items: center;
+  color: rgba(30, 30, 30, 0.713);
+  border-radius: 1rem;
+  zoom: 80%;
+  transition: .4s;
+
+  }
+
+
+}
+@media (max-width:700px) {
+  
+  @keyframes mover1 {
+    0%{
+      left: 20%;
+    }
+    50%{
+      left: 90%;
+    }
+    100%{
+      left: 20%;
+    }
+   
+    
+  }
+  .target{
+    width: 25%;
+    animation-duration: 2.5s;
+  }
+  .holder{
+    animation-duration: 2.5s;
+  }
+  
+  .pts{
+    z-index: 6;
+  
+    width: 20rem;
+    height: 12rem;
+   
+    border: .3rem solid black;  
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(204, 204, 204);
+    justify-content: space-around;
+    align-items: center;
+    color: rgba(30, 30, 30, 0.713);
+    border-radius: 1rem;
+    zoom: 50%;
+    transition: .4s;
+  
+    }
+    .arrow{
+      width: .1rem;
+      height: 8rem;
+    }
+ 
+    .pts{
+      zoom: 50%;
+    }
+
+
+  .color{
+    display: none;
+  }
+  .pts{
+    zoom: 50%;
+    height: 11rem;
+  }
+  .pts-c{
+    height: 10rem;
+    
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 80%;
+  }
+  
+  .arrow-move{
+    position: absolute;
+    height:6rem;
+    width: .1rem;
+    top: 70%;
+    
+    
+    animation-duration: .1s;
+    animation-iteration-count:1;
+    background-color: black;
+  
+  }
+}
+
+.arrow-move{
+  position: absolute;
+  height:5rem;
+  width: .1rem;
+  top: 70%;
+  display: none;
+  
+  animation-duration: .04s;
+  animation-iteration-count:1;
+  background-color: black;
+
+}
+@keyframes ar{
+  from{
+  top: 66%;
+  }
+  to{
+    top: 3%;
+  }
+}
+@media (min-height:700px) {
+  
+  .pts-c{
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+   z-index: 6;
+  }
 }

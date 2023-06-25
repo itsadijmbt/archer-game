@@ -4,118 +4,101 @@ const target=document.querySelector('.target');
 const cc=document.querySelector('.color');
 const card=document.querySelector('.card');
 const sc=document.querySelector('.sc');
-const baller=document.querySelector('.baller')
-const bodycontroller=document.querySelector('.body-controller')
-const scorepts=document.querySelector('.pts')
-const rebtn=document.querySelector('.retry')
+const baller=document.querySelector('.baller');
+const bodycontroller=document.querySelector('.body-controller');
+const scorepts=document.querySelector('.pts');
+const rebtn=document.querySelector('.retry');
+const scpt=document.querySelector('.pts-c');
+const arm=document.querySelector('.arrow-move')
 
 
 let tpts=0;
 let pts=0;
- arr.addEventListener('click',()=>{
- arr.className='arrow-mov';
+ bow.addEventListener('click',()=>{
 
-
- setTimeout(getData,100); 
+  arm.style.display='block'
+  arm.style.animationName='ar';
+ setTimeout(getData,50); 
 
  setTimeout(()=>{
   arr.className='arrow'
  },200)
+
+
 });
 let cx=1;
 function getData(){
 
-  
-  let tdata=target.getBoundingClientRect();
- 
-  let tdataLeftRange=tdata.left
+  let arrowData= arr.getBoundingClientRect();
 
+  console.log("arrow l",arrowData.left)
+  console.log("arrow r",arrowData.right)
+ 
+  let cen=parseFloat( (arrowData.left+arrowData.right)/2);
+
+  let tdata=target.getBoundingClientRect();
+  console.log("taget left",tdata.left)
+  console.log("target right",tdata.right)
+  let tdataLeftRange=tdata.left
+ 
+  let targetCalc=parseFloat( (tdata.left+tdata.right)/2);
+
+
+  let t =parseFloat((tdata.right-tdata.left)/6);
   const newB=document.createElement('div');
   newB.className='ballin';
      
+  console.log("positoin of hitting ",Math.abs(targetCalc-cen));
+  console.log("point barrier",t);
 
-  if(tdataLeftRange>=837 && tdataLeftRange<=994 && cx<=3)
+  if(  Math.abs(targetCalc-cen)<=parseFloat(targetCalc/2)  && cx<=3)
   {
  
-    if(tdataLeftRange>974 && tdataLeftRange<=994 ){tpts=30;
+    if(  Math.abs(targetCalc-cen)>2*t && Math.abs(targetCalc-cen)<=3*t ){tpts=30;
      
      cc.style.border="1rem solid black";
      card.textContent=tpts;
      newB.style.border="1rem solid black";
 
     }
-    else if(tdataLeftRange>961 && tdataLeftRange<=974 )
+    else if(  Math.abs(targetCalc-cen)<=2*t &&  Math.abs(targetCalc-cen)>1*t)
     {tpts=50;
       
       cc.style.border="1rem solid blue";
       card.textContent=tpts;
       newB.style.border="1rem solid blue";
     }
-    else if(tdataLeftRange>951 && tdataLeftRange<=961 )
+    else if( Math.abs(targetCalc-cen)<=1*t &&  Math.abs(targetCalc-cen)>t*0.5 )
     {tpts=70;
       
       card.textContent=tpts;
-      cc.style.border="1rem solid orange";
-      newB.style.border="1rem solid orange";
+      cc.style.border="1rem solid red";
+      newB.style.border="1rem solid red";
  }
-    else if(tdataLeftRange>932 && tdataLeftRange<=951 )
-    {tpts=90;
-      
-      cc.style.border="1rem solid yellow";
-      card.textContent=tpts;
-      newB.style.border="1rem solid yellow";
- }
-    else if(tdataLeftRange>910 && tdataLeftRange<=932 )
+    else if( Math.abs(targetCalc-cen)<=t*0.5 &&  Math.abs(targetCalc-cen)>=0)
     {tpts=100;
       
-      cc.style.border="1rem solid green";
-      newB.style.border="1rem solid green";
- 
-      card.textContent=tpts;
-       }
-    else if(tdataLeftRange>894 && tdataLeftRange<=910 )
-    {tpts=90;
-      
       cc.style.border="1rem solid yellow";
       card.textContent=tpts;
       newB.style.border="1rem solid yellow";
- }
-    else if(tdataLeftRange>883 && tdataLeftRange<=894 )
-    {tpts=80;
+   }
+   else{
+    tpts=0;
       
-      cc.style.border="1rem solid red";
-      card.textContent=tpts;
-      newB.style.border="1rem solid red";
-    }
-    else if(tdataLeftRange>875 && tdataLeftRange<=883 )
-    {tpts=70;
       
-      cc.style.border="1rem solid orange";
       card.textContent=tpts;
-      newB.style.border="1rem solid orange";
-
- }
-    else if(tdataLeftRange>856 && tdataLeftRange<=875 )
-    {tpts=50;
-      
-      cc.style.border="1rem solid blue";
-      card.textContent=tpts;
-      newB.style.border="1rem solid blue";
- }
-    else if(tdataLeftRange>837 && tdataLeftRange<=856 )
-    {tpts=30;
-     
-     card.textContent=tpts;
-     cc.style.border="1rem solid black";
-     newB.style.border="1rem solid black";
-}
+      newB.style.border="1rem solid white";
+   }
     
   }
   else{
     tpts=0;
     newB.style.border="1rem solid white";
   }
-
+  
+  arm.style.display='none';
+  
+  arm.style.animationName='none';
   baller.appendChild(newB)
 
   if(cx<=3){
@@ -127,9 +110,11 @@ function getData(){
   else{
 
    bodycontroller.style.filter="blur(10px)"
-   scorepts.style.top="40%";
-   scorepts.style.left="39%"
-   scorepts.style.zoom="130%";
+  
+  
+   
+   scpt.style.justifyContent="center"
+  
    rebtn.style.display='block';
    baller.removeChild(baller.lastChild);
    
@@ -154,9 +139,11 @@ function resetGame()
   bodycontroller.style.filter="blur(0px)";
   pts=0;
   sc.textContent='';
-  scorepts.style.top="35%";
-  scorepts.style.left="80.3%"
-  scorepts.style.zoom="100%";
+  if(window.innerWidth>700)
+  scpt.style.justifyContent="end"
+  else
+  scpt.style.justifyContent="center"
+  
   card.textContent='';
   rebtn.style.display='none';
   cx=1;
@@ -174,3 +161,18 @@ function resetGame()
 //0 180 961 1141 left 70pts
 //0 180 974.328125 1154.328125 left 50pts
 //0 180 993.359375 1173.359375 left 30pts
+
+/* red arrow top 46.046875
+g2.js:31 arrow l 864
+g2.js:32 arrow r 1164
+g2.js:33 arrow b 214.421875
+g2.js:36 taget left 884.609375
+g2.js:37 target right 1064.609375*/
+
+/* green g2.js:30 arrow top 57.609375
+g2.js:31 arrow l 864
+g2.js:32 arrow r 1164
+g2.js:33 arrow b 225.984375
+g2.js:36 taget left 925.3125
+g2.js:37 target right 1105.3125*/
+
