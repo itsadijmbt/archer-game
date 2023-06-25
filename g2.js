@@ -139,10 +139,9 @@ function resetGame()
   bodycontroller.style.filter="blur(0px)";
   pts=0;
   sc.textContent='';
-  if(window.innerWidth>700)
+
   scpt.style.justifyContent="end"
-  else
-  scpt.style.justifyContent="center"
+ 
   
   card.textContent='';
   rebtn.style.display='none';

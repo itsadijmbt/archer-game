@@ -346,7 +346,7 @@ h1{
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 80%;
+    top: 85%;
   }
   
   .arrow-move{
@@ -389,7 +389,7 @@ h1{
     position: absolute;
     top: 30%;
     width: 100%;
-    height: 10rem;
+    height: 15rem;
     display: flex;
     justify-content: end;
     align-items: center;
