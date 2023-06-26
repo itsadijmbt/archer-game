@@ -111,9 +111,7 @@ function getData(){
 
    bodycontroller.style.filter="blur(10px)"
   
-  
-   
-   scpt.style.justifyContent="center"
+ scpt.className='pts-c1';
   
    rebtn.style.display='block';
    baller.removeChild(baller.lastChild);
@@ -140,8 +138,8 @@ function resetGame()
   pts=0;
   sc.textContent='';
 
-  scpt.style.justifyContent="center"
- 
+
+  scpt.className='pts-c';
   
   card.textContent='';
   rebtn.style.display='none';

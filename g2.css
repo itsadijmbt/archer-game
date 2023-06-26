@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 .arrow{
-  background-color: black;
+  background-color:transparent;
   height: 8rem;
   width: .2rem;
  
@@ -16,8 +16,7 @@
 .bow{
   position: absolute;
   display: block;
-  transform: rotateX(50d
-  eg);
+  transform: rotateX(50deg);
   filter: drop-shadow( 0rem 7rem .4rem black);
 }
 
@@ -74,11 +73,21 @@
   background-image: url(46190.jpg);
   background-position: bottom;
   background-size: cover;
-  height: 108vh;
+  height: 115vh;
   width: 101%;
   z-index: -2;
   position: relative;
  
+}
+.pts-c1{
+display: flex;
+justify-content: center;
+width: 100%;
+position: absolute;
+top: 30%;
+zoom: 100%;
+transition: 0.2s;
+
 }
 .pts{
   z-index: 5;
@@ -174,7 +183,7 @@ h1{
   position: absolute;
   width: 100%;
   bottom: -6%;
-  height:20rem;
+  height:1rem;
   align-items: start;
   z-index: 2;
    
@@ -184,7 +193,7 @@ h1{
   justify-content: center;
   position: absolute;
   width: 101%;
-  bottom: -6%;
+  bottom: 7%;
   height: 20rem;
 
   z-index: 5;
@@ -272,8 +281,16 @@ h1{
   .ba{
     bottom: -6%;
   }
+  .pts-c{
+    height: 10rem;
+    
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 80%;
+  }
 }
-@media (max-width:800px) {
+@media (max-width:2000px) {
   
   @keyframes mover1 {
     0%{
@@ -349,17 +366,17 @@ h1{
 }
 
 .arrow-move{
-  background-color: red;
+  background-color: goldenrod;
   position: absolute;
-  height:5rem;
-  width: .1rem;
+  height:7rem;
+  width: .2rem;
   top: 70%;
   display: none;
   animation-name: ar;
   animation-duration: .04s;
   animation-iteration-count:1;
-  background-color: black;
 
+z-index: 8;
 }
 @keyframes ar{
   from{
@@ -373,11 +390,11 @@ h1{
   
   .pts-c{
     position: absolute;
-    top: 30%;
+    top: 90%;
     width: 100%;
     height: 10rem;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
    z-index: 6;
   }
