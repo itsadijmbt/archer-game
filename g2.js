@@ -140,7 +140,7 @@ function resetGame()
   pts=0;
   sc.textContent='';
 
-  scpt.style.justifyContent="end"
+  scpt.style.justifyContent="center"
  
   
   card.textContent='';
